@@ -1,0 +1,4 @@
+eks:
+  source:  "https://github.com/r-devops/tf-module-eks.git"
+  version: "main"
+
