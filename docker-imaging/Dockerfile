@@ -9,3 +9,4 @@ RUN           echo "<h1>Hello World from CentOS</h1>" >/usr/share/nginx/html/ind
 CMD           ["nginx", "-g", "daemon off;"]
 LABEL         COMPONENT=nginx
 EXPOSE        80
+ENV           COMPONENT=nginx
