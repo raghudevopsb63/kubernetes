@@ -17,5 +17,5 @@
 FROM          centos:7
 RUN           useradd roboshop
 USER          roboshop
-CMD           ["google.com"]
-ENTRYPOINT    ["ping", "-c", "5"]
+#CMD           ["google.com"]
+#ENTRYPOINT    ["ping", "-c", "5"]
