@@ -42,4 +42,18 @@ metadata:
 data:
   URL: www.example.com
   DOMAIN: example.com
-  FULL_URL: "http
+  FULL_URL: "http://www.example.com"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo5
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: [ "sleep", "10000" ]
+      envFrom:
+        - configMapRef:
+            name: sample
