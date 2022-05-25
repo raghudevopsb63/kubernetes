@@ -20,3 +20,25 @@ spec:
       - name: nginx
         image: nginx:1.16
 
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy
+  labels:
+    app: guestbook-deploy
+    tier: frontend-deploy
+spec:
+  # modify replicas according to your case
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: frontend-deploy
+  template:
+    metadata:
+      labels:
+        tier: frontend-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.16
