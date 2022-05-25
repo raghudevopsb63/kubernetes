@@ -1,3 +1,4 @@
+## String need not to be quoted , But numbers should be in user inputs.
 apiVersion: v1
 kind: Pod
 metadata:
@@ -18,3 +19,18 @@ spec:
       image: nginx
     - name: mongodb
       image: mongo
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo4
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: [ "sleep", "10000" ]
+      env:
+        - name: URL
+          value: www.example.com
+        - name: DOMAIN
+          value: example.com
