@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: NameSpace
+metadata:
+  name: dev
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dev-nginx
+  namespace: dev
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  namespace: dev
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: ["sleep", "10000"]
+---
+apiVersion: v1
+kind: NameSpace
+metadata:
+  name: prod
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prod-nginx
+  namespace: prod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  namespace: prod
+spec:
+  containers:
+    - name: centos
+      image: centos:7
+      command: ["sleep", "10000"]
