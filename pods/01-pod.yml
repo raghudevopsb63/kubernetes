@@ -69,7 +69,7 @@ data:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: demo5
+  name: demo6
 spec:
   containers:
     - name: centos
