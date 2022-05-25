@@ -37,6 +37,6 @@ spec:
     image: nginx
     resources:
       requests:
-        memory: "4Gi"
+        memory: "3268Mi"
         cpu: "1000m"
 
