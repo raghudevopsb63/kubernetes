@@ -34,3 +34,12 @@ spec:
           value: www.example.com
         - name: DOMAIN
           value: example.com
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample
+data:
+  URL: www.example.com
+  DOMAIN: example.com
+  FULL_URL: "http
