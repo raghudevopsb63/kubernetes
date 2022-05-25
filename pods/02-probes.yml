@@ -32,7 +32,7 @@ kind: Pod
 metadata:
   name: frontend
 spec:
-  priorityClassName: system-cluster-critical
+  priorityClassName: system-node-critical
   containers:
   - name: app
     image: nginx
