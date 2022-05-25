@@ -1,51 +1,51 @@
-#apiVersion: apps/v1
-#kind: ReplicaSet
-#metadata:
-#  name: frontend
-#  labels:
-#    app: guestbook
-#    tier: frontend
-#spec:
-#  # modify replicas according to your case
-#  replicas: 4
-#  selector:
-#    matchLabels:
-#      tier: frontend
-#  template:
-#    metadata:
-#      labels:
-#        tier: frontend
-#    spec:
-#      containers:
-#      - name: nginx
-#        image: nginx:1.16
-
----
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: frontend-deploy
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
 spec:
   # modify replicas according to your case
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
-      tier: frontend-deploy
+      tier: frontend
   template:
     metadata:
       labels:
-        tier: frontend-deploy
+        tier: frontend
     spec:
       containers:
       - name: nginx
-        image: nginx:1.17
+        image: nginx:1.16
+
+---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: frontend-deploy
+#spec:
+#  # modify replicas according to your case
+#  replicas: 2
+#  selector:
+#    matchLabels:
+#      tier: frontend-deploy
+#  template:
+#    metadata:
+#      labels:
+#        tier: frontend-deploy
+#    spec:
+#      containers:
+#      - name: nginx
+#        image: nginx:1.17
 ---
 apiVersion: v1
 kind: Pod
 metadata:
   name: demo2
   labels:
-    tier: frontend-deploy
+    tier: frontend
 spec:
   containers:
     - name: nginx
