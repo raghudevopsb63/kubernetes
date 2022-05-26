@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: httpd:1.16
+        image: httpd
 
 ---
 apiVersion: v1
