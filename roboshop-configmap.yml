@@ -12,3 +12,12 @@ metadata:
 data:
   MONGO_URL: 'mongodb://admin1:roboshop1@roboshop-prod.cluster-cmscnppwjzuf.us-east-1.docdb.amazonaws.com:27017/users?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false'
   REDIS_HOST: redis-prod.roboshop.internal
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cart-cm
+data:
+  REDIS_HOST: redis-prod.roboshop.internal
+  CATALOGUE_HOST: catalogue-roboshop
+
