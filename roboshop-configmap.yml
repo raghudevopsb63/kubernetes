@@ -20,4 +20,11 @@ metadata:
 data:
   REDIS_HOST: redis-prod.roboshop.internal
   CATALOGUE_HOST: catalogue-roboshop
-
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipping-cm
+data:
+  DB_HOST: mysql-prod.roboshop.internal
+  CART_ENDPOINT: cart-roboshop:8080
